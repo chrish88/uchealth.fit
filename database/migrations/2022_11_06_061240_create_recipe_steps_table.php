@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('recipe_steps', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('recipe_id');
+            $table->integer('step_number');
+            $table->text('step_description');
             $table->timestamps();
         });
     }

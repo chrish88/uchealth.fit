@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('quantities', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('recipe_id');
+            $table->foreignId('ingredient_id');
+            $table->foreignId('ingredient_measurement_id');
+            $table->float('quantity');
             $table->timestamps();
         });
     }
